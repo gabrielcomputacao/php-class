@@ -1,1 +1,1 @@
-https://localhost/php_oo/public/
+http://localhost/php_oo/public/
