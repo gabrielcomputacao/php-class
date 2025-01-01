@@ -11,9 +11,9 @@ class Pessoa
 
     private Adress $adress;
 
-    public function __construct(int $ageNew, Adress $adress)
+    public function __construct(string $name, int $ageNew, Adress $adress)
     {
-        $this->nome = "gabriel";
+        $this->nome = $name;
         $this->validateAge($ageNew);
         // = Maneira certo de definir o nome da classe dentro dela mesma
         self::$numPeople++;

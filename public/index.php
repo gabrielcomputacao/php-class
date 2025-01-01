@@ -2,12 +2,14 @@
 
 require "../src/Models/Pessoa.php";
 require "../src/Models/Adress.php";
+require "../src/Models/Employee.php";
+require "../src/Models/Client.php";
 
 require "../utils/functions.php";
 
 
 $adress = new Adress('mg', 'divi', 'parana');
-$pessoa = new Pessoa(35, $adress);
+$pessoa = new Pessoa('gabriel', 35, $adress);
 
 // chamando atributo
 echo "<p> $pessoa->nome </p>";
@@ -37,3 +39,9 @@ echo "<br><br><br>";
 echo Pessoa::getNumPeople();
 
 showData($pessoa->getAdress());
+
+echo "<hr>";
+echo "<br><br><br>";
+
+$employee1 = new Employee('igor', 23, $adress, 'developer', 30000);
+showData($employee1);
