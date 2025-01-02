@@ -1,11 +1,13 @@
 <?php
 
+require "Authenticate.php";
 
-class Employee extends Pessoa
+class Employee extends Pessoa implements Authenticate
 {
 
     private string $position;
     private float $salary;
+    private string $password;
 
     public function __construct(string $nome, int $age, Adress $adress, string $position, float $salary)
     {
@@ -49,5 +51,19 @@ class Employee extends Pessoa
             "</pre>";
 
         echo $text;
+    }
+
+    public function login(string $employee, string $password): void
+    {
+        if ($this->nome == $employee && $password == $this->password) {
+            echo "passou";
+        } else {
+            echo "nao passou";
+        }
+    }
+
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
     }
 }

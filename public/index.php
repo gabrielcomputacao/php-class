@@ -1,15 +1,17 @@
 <?php
 
 require "../src/Models/Pessoa.php";
-require "../src/Models/Adress.php";
 require "../src/Models/Employee.php";
 require "../src/Models/Client.php";
+require "../src/Models/Adress.php";
 
 require "../utils/functions.php";
 
 
 $adress = new Adress('mg', 'divi', 'parana');
+$adress1 = new Adress('sp', 'sp', 'sp');
 $pessoa = new Employee('gabriel', 35, $adress, ' senior developer', 15000);
+$pessoaClient = new Client('gabriel', 35, $adress, '19-02-2000', 5000);
 
 // chamando atributo
 echo "<p> $pessoa->nome </p>";
@@ -55,3 +57,17 @@ echo "<hr>";
 echo "<br>";
 
 $employee1->_toString();
+
+echo "<hr>";
+echo "<br>";
+
+$employee1->setPassword("123");
+
+$employee1->login('igor', '123');
+
+$pessoaClient->printData('alou alo');
+
+echo "<hr>";
+echo "<br>";
+
+$adress->printData("testando printntnt");

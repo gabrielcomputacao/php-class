@@ -1,16 +1,20 @@
 <?php
 
-class Client extends Pessoa
+require_once 'PrintData.php';
+// require_once "Authenticate.php";
+class Client extends Pessoa implements Authenticate
 {
-
+    use PrintData;
     private string $dataNascimento;
     private float $renda;
+    private string $password;
 
     public function __construct(string $nome, int $age, Adress $adress, string $dataNascimento, float $renda)
     {
         parent::__construct($nome, $age, $adress);
         $this->dataNascimento = $dataNascimento;
         $this->renda = $renda;
+        $this->password = "222";
     }
 
     public function getDataNascimento()
@@ -50,5 +54,14 @@ class Client extends Pessoa
         $text += '</pre>';
 
         echo $text;
+    }
+
+    public function login(string $employee, string $password): void
+    {
+        if ($this->nome == $employee && $password == $this->password) {
+            echo "passou";
+        } else {
+            echo "nao passou";
+        }
     }
 }
