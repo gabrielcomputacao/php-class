@@ -1,5 +1,7 @@
 <?php
 
+namespace src\Models;
+
 interface Authenticate
 {
 

@@ -1,0 +1,15 @@
+{
+    "name": "gabri/php_oo",
+    "autoload": {
+        "psr-4": {
+            "src\\Models\\": "src/Models"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel",
+            "email": "gabrielcomputacao@outlook.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,5 +1,7 @@
 <?php
 
+namespace src\Models;
+
 require_once 'PrintData.php';
 // require_once "Authenticate.php";
 class Client extends Pessoa implements Authenticate

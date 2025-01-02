@@ -1,5 +1,6 @@
 <?php
 
+namespace src\Models;
 // = Classe abstract nao pode ter um objeto instanciaado por ela
 abstract class Pessoa
 {

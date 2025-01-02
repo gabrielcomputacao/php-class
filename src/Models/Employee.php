@@ -1,5 +1,7 @@
 <?php
 
+namespace src\Models;
+
 require "Authenticate.php";
 
 class Employee extends Pessoa implements Authenticate

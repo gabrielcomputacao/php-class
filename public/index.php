@@ -1,11 +1,20 @@
 <?php
 
-require "../src/Models/Pessoa.php";
+/* require "../src/Models/Pessoa.php";
 require "../src/Models/Employee.php";
 require "../src/Models/Client.php";
-require "../src/Models/Adress.php";
+require "../src/Models/Adress.php"; */
+
 
 require "../utils/functions.php";
+require "../vendor/autoload.php";
+
+
+use src\Models\Pessoa;
+use src\Models\Adress;
+use src\Models\Employee;
+use src\Models\Client;
+use src\Models\PrintData;
 
 
 $adress = new Adress('mg', 'divi', 'parana');

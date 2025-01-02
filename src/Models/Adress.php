@@ -1,5 +1,6 @@
 <?php
 
+namespace src\Models;
 //  = Verifica se o printData que é uma trait ja foi requerido em alguma parte se sim ele nao importa novamente
 // require_once 'PrintData.php';
 class Adress
