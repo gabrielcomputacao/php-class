@@ -1,23 +1,26 @@
 <?php
 
-class Pessoa
+// = Classe abstract nao pode ter um objeto instanciaado por ela
+abstract class Pessoa
 {
 
     // A partir do php 7.4 pode definir o tipo da variavel
     public string $nome;
-    private int $age;
+    // ! o private encapsula totalmente o atributo, somente a classe tem acesso
+    protected int $age;
     // = atributo estatico pertence somente a classe
     private static int $numPeople = 0;
-
-    private Adress $adress;
+    // ! o protected classes filhas e a propria classe tem acesso
+    protected float $desconto;
+    protected Adress $adress;
 
     public function __construct(string $name, int $ageNew, Adress $adress)
     {
         $this->nome = $name;
         $this->validateAge($ageNew);
-        // = Maneira certo de definir o nome da classe dentro dela mesma
+        // = Maneira certa de definir o nome da classe dentro dela mesma
         self::$numPeople++;
-
+        $this->setDesconto();
         $this->adress = $adress;
     }
 
@@ -63,4 +66,14 @@ class Pessoa
             $this->age = $age;
         }
     }
+
+    // = O protected so pode ser usado pela classe pai e classe filha
+    protected abstract function setDesconto(): void;
+
+    public function getDesconto()
+    {
+        return $this->desconto;
+    }
+
+    public abstract function _toString(): void;
 }

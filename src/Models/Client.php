@@ -32,4 +32,23 @@ class Client extends Pessoa
     {
         $this->renda = $renda;
     }
+
+    public function setDesconto(): void
+    {
+        $this->desconto = 0.05;
+    }
+
+    public  function _toString(): void
+    {
+
+        $text = "<pre>";
+
+        $text += "Nome:" . $this->nome;
+        $text += "Endereço:" . $this->adress->getUf();
+        $text += "Renda:" . $this->renda;
+
+        $text += '</pre>';
+
+        echo $text;
+    }
 }

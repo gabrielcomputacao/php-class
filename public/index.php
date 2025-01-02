@@ -9,7 +9,7 @@ require "../utils/functions.php";
 
 
 $adress = new Adress('mg', 'divi', 'parana');
-$pessoa = new Pessoa('gabriel', 35, $adress);
+$pessoa = new Employee('gabriel', 35, $adress, ' senior developer', 15000);
 
 // chamando atributo
 echo "<p> $pessoa->nome </p>";
@@ -45,3 +45,13 @@ echo "<br><br><br>";
 
 $employee1 = new Employee('igor', 23, $adress, 'developer', 30000);
 showData($employee1);
+
+echo "<hr>";
+echo "<br>";
+
+echo $employee1->getDesconto();
+
+echo "<hr>";
+echo "<br>";
+
+$employee1->_toString();

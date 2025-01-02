@@ -7,7 +7,6 @@ class Employee extends Pessoa
     private string $position;
     private float $salary;
 
-
     public function __construct(string $nome, int $age, Adress $adress, string $position, float $salary)
     {
         parent::__construct($nome, $age, $adress);
@@ -31,5 +30,24 @@ class Employee extends Pessoa
     public function setSalary(float $salary)
     {
         $this->salary = $salary;
+    }
+
+    public function setDesconto(): void
+    {
+        $this->desconto = 0.10;
+    }
+
+    public  function _toString(): void
+    {
+
+        $text = "<pre>" .
+
+            "Nome:" . $this->age .
+            "Endereço:" . $this->adress->getUf() .
+            "Renda:" . $this->salary .
+
+            "</pre>";
+
+        echo $text;
     }
 }
